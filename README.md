@@ -1,42 +1,46 @@
 # AI Video Generator Backend (Node.js, Serverless)
 
-Serverless backend for an AI-powered video/GIF generator using AWS Lambda and API Gateway.  
-Currently returns mocked video URLs for testing and development.
+This project provides a mocked AWS Lambda backend for an AI video/GIF generator web app.
 
 ## Architecture
 
-- API Gateway HTTP API with POST `/generate` route  
-- AWS Lambda (Node.js 18.x) processes prompts and returns fake S3 URLs  
-- Mocked implementation to avoid AI API costs  
+- API Gateway HTTP API endpoint `/generate` (POST)
+- AWS Lambda function (Node.js 18.x)
+- Returns mocked S3 URLs (no real AI call yet)
 
 ## Setup & Deployment
 
 ### Prerequisites
 
-- AWS CLI & SAM CLI installed and configured  
-- Node.js 18.x installed  
+- AWS CLI installed and configured
+- AWS SAM CLI installed
+- Node.js 18.x installed
 
 ### Build & Deploy
 
 ```bash
 sam build
 sam deploy --guided
-Testing
 
-Invoke locally with:
+Follow prompts to deploy your stack.
+Testing Locally
+
+Invoke the Lambda locally with:
 
 sam local invoke GenerateFunction --event events/event.json
 
-Run tests:
+Or run unit tests with:
 
 npm install
 npm test
 
 Usage
 
-Send POST to /generate with JSON body:
+Send a POST request to the deployed API Gateway URL /generate with JSON body:
 
-{ "prompt": "Alien crash lands in Arizona" }
+{
+  "prompt": "Alien crash lands in Arizona"
+}
 
 Example curl:
 
@@ -44,10 +48,8 @@ curl -X POST https://YOUR_API_ID.execute-api.YOUR_REGION.amazonaws.com/generate 
 -H "Content-Type: application/json" \
 -d '{"prompt": "Alien crash lands in Arizona"}'
 
-Next Steps
+Notes
 
-    Integrate real AI video generation
+    This is a mock implementation — replace with real AI integration later.
 
-    Add DynamoDB metadata storage
-
-    Improve error handling and security
+    Stays within AWS free tier.
