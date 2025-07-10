@@ -1,0 +1,9 @@
+node_modules/
+.aws-sam/
+build/
+dist/
+.env
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
