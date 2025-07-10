@@ -21,7 +21,7 @@ Currently returns mocked or pre-uploaded S3 video URLs for development and testi
 - AWS CLI configured with credentials  
 - AWS SAM CLI installed  
 - Node.js 18.x installed  
-- An S3 bucket (e.g. `ai-video-generator-yourname`) — see [S3 Setup](#s3-setup)
+- An S3 bucket 
 
 ###  Build & Deploy
 
