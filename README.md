@@ -80,7 +80,6 @@ To store or serve demo GIFs:
 
     Update app.js to use your bucket name
 
-Want to use signed URLs? Ask and we’ll show you how to generate them securely in Lambda.
  Next Steps
 
     Upload real AI-generated content to S3
